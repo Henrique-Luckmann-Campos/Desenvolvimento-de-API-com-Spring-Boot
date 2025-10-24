@@ -30,8 +30,5 @@ Permite realizar operações completas de **CRUD (Create, Read, Update, Delete)*
 | `PUT` | `/api/livros/{id}` | Atualiza os dados de um livro |
 | `DELETE` | `/api/livros/{id}` | Exclui um livro |
 
----
-
-##  Estrutura do Projeto
 
 
