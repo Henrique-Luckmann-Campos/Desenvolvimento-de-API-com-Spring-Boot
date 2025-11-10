@@ -1,8 +1,8 @@
-package com.Livraria.service;
+package com.livraria.service;
 
-import com.Livraria.model.Livro;
-import com.Livraria.repository.LivroRepository;
-import com.Livraria.exception.RecursoNaoEncontradoException;
+import com.livraria.model.Livro;
+import com.livraria.repository.LivroRepository;
+import com.livraria.exception.RecursoNaoEncontradoException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

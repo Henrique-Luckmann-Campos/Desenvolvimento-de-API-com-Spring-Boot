@@ -1,4 +1,16 @@
-package com.booksphere.model;
+package com.livraria.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Size;
+import org.antlr.v4.runtime.misc.NotNull;
+import org.hibernate.annotations.Table;
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
