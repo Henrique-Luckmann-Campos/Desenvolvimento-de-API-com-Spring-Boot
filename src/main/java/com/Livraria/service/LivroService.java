@@ -1,8 +1,9 @@
-package com.livraria.service;
+package com.Livraria.service;
 
-import com.livraria.model.Livro;
-import com.livraria.repository.LivroRepository;
-import com.livraria.exception.RecursoNaoEncontradoException;
+
+import com.Livraria.exception.RecursoNaoEncontradoException;
+import com.Livraria.model.Livro;
+import com.Livraria.repository.LivroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,10 +32,12 @@ public class LivroService {
     }
 
     // UPDATE
+
     public Livro atualizarLivro(Long id, Livro detalhesLivro) {
+
         Livro livro = buscarPorId(id);
 
-        // Atualiza campos
+        // Atualiza campos (presumindo que getters/setters existem)
         livro.setTitulo(detalhesLivro.getTitulo());
         livro.setAutor(detalhesLivro.getAutor());
         livro.setIsbn(detalhesLivro.getIsbn());
@@ -43,6 +46,7 @@ public class LivroService {
 
         return livroRepository.save(livro);
     }
+
 
     // DELETE
     public void deletarLivro(Long id) {

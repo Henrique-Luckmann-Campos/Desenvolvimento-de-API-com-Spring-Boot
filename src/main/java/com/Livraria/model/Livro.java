@@ -1,19 +1,15 @@
-package com.livraria.model;
+package com.Livraria.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import com.Livraria.DTOS.LivroCadastroDTO;
+import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Size;
 import org.antlr.v4.runtime.misc.NotNull;
-import org.hibernate.annotations.Table;
+
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.annotation.Id;
-
-import javax.persistence.*;
-import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "livro")
@@ -36,7 +32,7 @@ public class Livro {
     @Column(unique = true)
     private String isbn;
 
-    @NotNull(message = "O ano de publicação é obrigatório")
+    @NotNull()
     @Min(value = 1000, message = "O ano de publicação deve ser válido")
     @Max(value = 2099, message = "O ano de publicação não pode ser futuro")
     private Integer anoPublicacao;
@@ -44,7 +40,7 @@ public class Livro {
     private String genero;
 
     // Construtor padrão (necessário pelo JPA)
-    public Livro() {
+    public Livro(@Valid LivroCadastroDTO livro) {
     }
 
     // Getters e Setters
